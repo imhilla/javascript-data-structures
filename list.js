@@ -129,3 +129,32 @@ function moveTo(position) {
 function getElement() {
   return this.dataStore[this.pos];
 }
+
+//create a new list of names to demonstrate how these functions work:
+var names = new List();
+names.append("Clayton");
+names.append("Raymond");
+names.append("Cynthia");
+names.append("Jennifer");
+names.append("Bryan");
+names.append("Danny");
+
+names.front();
+print(names.getElement()); // displays Clayton
+
+names.next();
+print(names.getElement()); // displays Raymond
+
+names.next();
+names.next();
+names.prev();
+print(names.getElement()); // displays Cynthia
+
+//Iterating Through a List
+// for (names.front(); names.currPos() < names.length(); names.next()) {
+//   print(names.getElement());
+// }
+
+// for (names.end(); names.currPos() >= 0; names.prev()) {
+//   print(names.getElement());
+// }
