@@ -2,7 +2,7 @@ function List() {
   this.listSize = 0;
   this.pos = 0;
   this.dataStore = []; // initializes an empty array to store list elements
-  //this.clear = clear;
+  this.clear = clear;
   this.find = find;
   this.toString = toString;
   this.insert = insert;
@@ -78,3 +78,18 @@ function insert(element, after) {
 }
 
 //Clear: Removing All Elements from a List
+function clear() {
+  delete this.dataStore;
+  this.dataStore = [];
+  this.listSize = this.pos = 0;
+}
+
+//Contains: Determining if a Given Value Is in a List
+function contains(element) {
+  for (var i = 0; i < this.dataStore.length; ++i) {
+    if (this.dataStore[i] == element) {
+      return true;
+    }
+  }
+  return false;
+}
